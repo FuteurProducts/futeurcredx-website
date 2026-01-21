@@ -41,21 +41,21 @@ export default function Footer() {
       icon: FileCode,
       title: "API Docs",
       description: "Integrate with LumiqAI's APIs and SDKs",
-      href: "https://docs.futeurcredx.com/",
+      href: "https://www.futeurcredx.com/api-docs",
       external: true,
     },
     {
       icon: RefreshCw,
       title: "Changelog",
       description: "Latest updates to our API and SDK",
-      href: "https://docs.futeurcredx.com/changelog",
+      href: "https://www.futeurcredx.com/changelog",
       external: true,
     },
     {
       icon: Settings,
       title: "API Reference",
       description: "Manage your integration",
-      href: "https://docs.futeurcredx.com/api-reference",
+      href: "https://www.futeurcredx.com/api-reference",
       external: true,
     },
   ];
@@ -75,6 +75,8 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-white/70 hover:text-white text-sm transition-colors"
                 >
                   {item.name}
@@ -93,6 +95,8 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-white/70 hover:text-white text-sm transition-colors"
                 >
                   {item.name}
@@ -111,6 +115,8 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-white/70 hover:text-white text-sm transition-colors"
                 >
                   {item.name}
@@ -129,6 +135,8 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-white/70 hover:text-white text-sm transition-colors"
                 >
                   {item.name}
@@ -181,19 +189,19 @@ export default function Footer() {
 
           {/* Legal Links Row */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/50 mb-6">
-            <a href="https://www.futeurcredx.com/privacy-policy" className="hover:text-white transition-colors">
+            <a href="https://www.futeurcredx.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <a href="https://www.futeurcredx.com/terms-of-service" className="hover:text-white transition-colors">
+            <a href="https://www.futeurcredx.com/terms-of-service" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Terms of Service
             </a>
-            <a href="https://www.futeurcredx.com/legal/cookie-policy" className="hover:text-white transition-colors">
+            <a href="https://www.futeurcredx.com/legal/cookie-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Cookie Policy
             </a>
-            <a href="https://www.futeurcredx.com/legal/data-processing" className="hover:text-white transition-colors">
+            <a href="https://www.futeurcredx.com/legal/data-processing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Data Processing
             </a>
-            <a href="https://www.futeurcredx.com/legal/glba-compliance" className="hover:text-white transition-colors">
+            <a href="https://www.futeurcredx.com/legal/glba-compliance" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               GLBA Compliance
             </a>
           </div>
