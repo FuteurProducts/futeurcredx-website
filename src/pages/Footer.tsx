@@ -6,32 +6,32 @@ export default function Footer() {
     products: {
       title: "Products",
       items: [
-        { name: "FuteurCredX App", link: "https://www.futeurcredx.com/app" },
-        { name: "LumiqAI", link: "https://www.futeurcredx.com/lumiq-build" },
+        { name: "FuteurCredX App", link: "https://futeurcredx.com/app" },
+        { name: "LumiqAI", link: "https://futeurcredx.com/lumiq-build" },
       ],
     },
     solutions: {
       title: "Solutions",
       items: [
-        { name: "For Consumers", link: "https://www.futeurcredx.com/business" },
-        { name: "For Institutions", link: "https://www.futeurcredx.com/enterprise" },
-        { name: "For Fintechs", link: "https://www.futeurcredx.com/fintech" },
+        { name: "For Consumers", link: "https://futeurcredx.com/business" },
+        { name: "For Institutions", link: "https://futeurcredx.com/enterprise" },
+        { name: "For Fintechs", link: "https://futeurcredx.com/fintech" },
       ],
     },
     partners: {
       title: "Partners",
       items: [
-        { name: "Partner Ecosystem", link: "https://www.futeurcredx.com/enterprise" },
-        { name: "Technology Partners", link: "https://www.futeurcredx.com/enterprise" },
+        { name: "Partner Ecosystem", link: "https://futeurcredx.com/enterprise" },
+        { name: "Technology Partners", link: "https://futeurcredx.com/enterprise" },
       ],
     },
     company: {
       title: "Company",
       items: [
-        { name: "About Us", link: "https://www.futeurcredx.com/about" },
-        { name: "Legal", link: "https://www.futeurcredx.com/privacy-policy" },
-        { name: "Support", link: "https://www.futeurcredx.com/contact-us" },
-        { name: "Contact", link: "https://www.futeurcredx.com/contact-us" },
+        { name: "About Us", link: "https://futeurcredx.com/about" },
+        { name: "Legal", link: "https://futeurcredx.com/privacy-policy" },
+        { name: "Support", link: "https://futeurcredx.com/contact-us" },
+        { name: "Contact", link: "https://futeurcredx.com/contact-us" },
       ],
     },
   };
@@ -41,21 +41,21 @@ export default function Footer() {
       icon: FileCode,
       title: "API Docs",
       description: "Integrate with LumiqAI's APIs and SDKs",
-      href: "https://www.futeurcredx.com/api-docs",
+      href: "https://futeurcredx.com/api-docs",
       external: true,
     },
     {
       icon: RefreshCw,
       title: "Changelog",
       description: "Latest updates to our API and SDK",
-      href: "https://www.futeurcredx.com/changelog",
+      href: "https://futeurcredx.com/changelog",
       external: true,
     },
     {
       icon: Settings,
       title: "API Reference",
       description: "Manage your integration",
-      href: "https://www.futeurcredx.com/api-reference",
+      href: "https://futeurcredx.com/api-reference",
       external: true,
     },
   ];
@@ -189,19 +189,19 @@ export default function Footer() {
 
           {/* Legal Links Row */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/50 mb-6">
-            <a href="https://www.futeurcredx.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a href="https://futeurcredx.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <a href="https://www.futeurcredx.com/terms-of-service" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a href="https://futeurcredx.com/terms-of-service" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Terms of Service
             </a>
-            <a href="https://www.futeurcredx.com/legal/cookie-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a href="https://futeurcredx.com/legal/cookie-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Cookie Policy
             </a>
-            <a href="https://www.futeurcredx.com/legal/data-processing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a href="https://futeurcredx.com/legal/data-processing" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               Data Processing
             </a>
-            <a href="https://www.futeurcredx.com/legal/glba-compliance" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a href="https://futeurcredx.com/legal/glba-compliance" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               GLBA Compliance
             </a>
           </div>
