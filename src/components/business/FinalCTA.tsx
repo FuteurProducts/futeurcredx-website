@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Rocket, ArrowRight, Eye } from 'lucide-react';
 
@@ -11,11 +12,11 @@ const FinalCTA = () => {
             FIND YOUR PERFECT PLAN
           </h2>
           <div className="flex justify-center gap-4 mb-12">
-            <a href="/contact-sales">
+            <Link to="/contact-sales">
               <Button className="bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-full font-medium">
                 Contact Sales
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
         

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SupportPageLayout from "@/components/support/SupportPageLayout";
 
 const DataFreshness = () => {
@@ -247,18 +248,18 @@ const DataFreshness = () => {
       <section>
         <h2>Related Resources</h2>
         <div className="grid md:grid-cols-3 gap-4 mt-6">
-          <a href="/support/fsr-score" className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors block">
+          <Link to="/support/fsr-score" className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors block">
             <h4 className="text-amber-400 mb-2">FSR Score Overview</h4>
             <p className="text-white/60 text-sm">Learn about our proprietary scoring model</p>
-          </a>
-          <a href="/support/tradeline-analysis" className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors block">
+          </Link>
+          <Link to="/support/tradeline-analysis" className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors block">
             <h4 className="text-amber-400 mb-2">Tradeline Analysis</h4>
             <p className="text-white/60 text-sm">Deep dive into tradeline data structure</p>
-          </a>
-          <a href="/support/webhooks-setup" className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors block">
+          </Link>
+          <Link to="/support/webhooks-setup" className="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-colors block">
             <h4 className="text-amber-400 mb-2">Webhooks Setup</h4>
             <p className="text-white/60 text-sm">Get notified when data changes</p>
-          </a>
+          </Link>
         </div>
       </section>
     </SupportPageLayout>
