@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import emailjs from "@emailjs/browser";
 
 export default function ContactSales() {
   const [formData, setFormData] = useState({
@@ -17,10 +18,51 @@ export default function ContactSales() {
     annualRevenue: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Sales form submitted:', formData);
+    setIsSubmitting(true);
+    setError('');
+
+    const templateParams = {
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      phone_number: formData.phone,
+      business_email: formData.email,
+      business_name: formData.company,
+      business_website: formData.website || 'Not provided',
+      annual_revenue: formData.annualRevenue,
+      message: formData.message || 'No message provided',
+      time: new Date().toLocaleString(),
+    };
+
+    try {
+      await emailjs.send(
+        'service_zo3597t',
+        'template_xmda9in',
+        templateParams,
+        'ROloA61OoR2iNley2'
+      );
+      setIsSubmitted(true);
+      setFormData({
+        firstName: '',
+        lastName: '',
+        phone: '',
+        email: '',
+        company: '',
+        website: '',
+        annualRevenue: '',
+        message: ''
+      });
+    } catch (err) {
+      setError('Something went wrong. Please try again or email us directly.');
+      console.error('EmailJS error:', err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -158,12 +200,36 @@ export default function ContactSales() {
                     placeholder="How can we help? (Optional)"
                   />
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-gray-900 hover:bg-gray-800 text-white py-4 h-14 rounded-full text-base font-semibold transition-colors"
-                  >
-                    Submit
-                  </Button>
+                  {error && (
+                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+                      {error}
+                    </div>
+                  )}
+
+                  {isSubmitted ? (
+                    <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-4 rounded-lg flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium">Thank you for reaching out!</p>
+                        <p className="text-sm">Our sales team will contact you shortly.</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-gray-900 hover:bg-gray-800 text-white py-4 h-14 rounded-full text-base font-semibold transition-colors disabled:opacity-70"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Submit'
+                      )}
+                    </Button>
+                  )}
 
                   <p className="text-xs text-gray-500 leading-relaxed">
                     By clicking Submit, you agree to receive calls, emails, or texts from FuteurCredX about our products or services. You can opt out anytime.
