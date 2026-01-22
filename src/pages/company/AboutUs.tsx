@@ -155,7 +155,7 @@ export default function AboutUs() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="hidden lg:flex justify-center"
             >
-              <div className="relative">
+              <Link to="/contact-us" className="relative group cursor-pointer">
                 {/* Rotating text circle */}
                 <motion.svg
                   animate={{ rotate: 360 }}
@@ -178,11 +178,11 @@ export default function AboutUs() {
                 
                 {/* Center icon */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 bg-[#C9B896] rounded-full flex items-center justify-center">
+                  <div className="w-20 h-20 bg-[#C9B896] rounded-full flex items-center justify-center group-hover:bg-[#D4C5A9] group-hover:scale-110 transition-all duration-300">
                     <ArrowRight className="w-8 h-8 text-[#2D2424]" />
                   </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           </div>
         </div>
