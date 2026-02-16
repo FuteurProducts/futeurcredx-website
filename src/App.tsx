@@ -63,8 +63,8 @@ const AppRouter = () => {
   const testMode = urlParams.get('mode');
   
   // Detect subdomain routing
-  const isDomainInstitutions = hostname === 'institutions.credbyfuteur.com' || (isLocalhost && testMode === 'institutions');
-  const isDomainPlatform = hostname === 'platform.credbyfuteur.com' || (isLocalhost && testMode === 'platform');
+  const isDomainInstitutions = hostname === 'institutions.futeurcredx.com' || hostname === 'institutions.credbyfuteur.com' || (isLocalhost && testMode === 'institutions');
+  const isDomainPlatform = hostname === 'platform.futeurcredx.com' || hostname === 'platform.credbyfuteur.com' || (isLocalhost && testMode === 'platform');
 
   return (
   <QueryClientProvider client={queryClient}>
