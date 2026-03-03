@@ -152,7 +152,7 @@ const TechnologyPartners = () => {
                 icon: Building2,
                 title: "Infrastructure Partners",
                 subtitle: "Cloud providers, identity verification, compliance platforms",
-                desc: "Build on top of LumiqAI with our certified infrastructure partnerships. SOC 2, ISO 27001, and FCRA-aligned from day one.",
+                desc: "Build on top of LumiqAI with our trusted infrastructure partnerships. SOC 2 ready, FCRA-aligned, and security-first from day one.",
                 partners: ["AWS", "Alloy", "Persona", "Socure", "Trulioo"]
               }
             ].map((item, i) => (
@@ -234,7 +234,7 @@ const TechnologyPartners = () => {
             {[
               { icon: Zap, title: "Quick Integration", desc: "RESTful APIs with SDKs for Python, Node, Go, and more. Most integrations go live in under 2 weeks.", color: "from-amber-400 to-orange-500" },
               { icon: Clock, title: "Real-Time Decisioning", desc: "Sub-second response times for credit checks, pre-qualification, and risk assessment.", color: "from-blue-400 to-cyan-500" },
-              { icon: Shield, title: "Compliance-Ready", desc: "SOC 2 Type II, FCRA-aligned, and built with explainable AI for audit trails.", color: "from-emerald-400 to-green-500" },
+              { icon: Shield, title: "Compliance-Ready", desc: "SOC 2 Type II ready, FCRA-aligned, and built with explainable AI for audit trails.", color: "from-emerald-400 to-green-500" },
               { icon: Link2, title: "Webhook Notifications", desc: "Event-driven architecture with webhooks for score changes, alerts, and lifecycle events.", color: "from-purple-400 to-violet-500" },
               { icon: Server, title: "Sandbox Environment", desc: "Full-featured sandbox with test data for development and QA before going live.", color: "from-pink-400 to-rose-500" },
               { icon: BarChart3, title: "Analytics Dashboard", desc: "Monitor API usage, success rates, and performance metrics in real-time.", color: "from-cyan-400 to-teal-500" }
@@ -376,7 +376,7 @@ const TechnologyPartners = () => {
                   { q: "What data formats do you support?", a: "LumiqAI accepts JSON via REST API. We also support webhook callbacks for event-driven architectures. Batch processing available for high-volume partners." },
                   { q: "How does pricing work for technology partners?", a: "Pricing is based on API call volume with tiered discounts. Technology partners also receive preferential rates and revenue share opportunities for customer referrals." },
                   { q: "Is there a sandbox for testing?", a: "Yes, all technology partners get access to a full-featured sandbox environment with synthetic test data. No live bureau pulls during development." },
-                  { q: "What compliance certifications do you have?", a: "LumiqAI is SOC 2 Type II certified and FCRA-aligned. Our infrastructure runs on AWS with HSM-backed encryption. Full audit trails for every decision." },
+                  { q: "What compliance certifications do you have?", a: "LumiqAI is SOC 2 Type II ready (observation window active) and FCRA-aligned. Our infrastructure runs on AWS with HSM-backed encryption. Full audit trails for every decision." },
                   { q: "How will LumiqAI integrate with my existing platform?", a: "We provide RESTful APIs with pre-built SDKs, webhook integrations, and embeddable UI components. Our team works directly with your engineers to ensure seamless integration." }
                 ].map((item, i) => (
                   <AccordionItem key={i} value={`item-${i}`} className="bg-white/[0.03] border border-white/10 rounded-xl px-6 overflow-hidden hover:border-amber-500/20 transition-colors">

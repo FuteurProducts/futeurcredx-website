@@ -219,7 +219,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="pt-6 border-t border-white/5">
             <div className="text-xs text-white/40">
-              © 2026 FuteurCredX. LUMIQ™ and FuteurCredX® are registered trademarks. All rights reserved.
+              © 2026 FuteurCredX. LUMIQ™ and FuteurCredX™ are trademarks of FuteurCredX Inc. All rights reserved.
             </div>
           </div>
         </div>

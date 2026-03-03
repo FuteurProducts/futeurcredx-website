@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { ArrowRight, Check, Zap, Shield, BarChart3, Clock, TrendingUp, Target, AlertTriangle, ChevronDown } from "lucide-react";
+import { ArrowRight, Check, Zap, Shield, BarChart3, Clock, TrendingUp, Target, AlertTriangle, ChevronDown, Loader2, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 import {
   Accordion,
   AccordionContent,
@@ -26,7 +27,7 @@ const faqs = [
   },
   {
     question: "Is LumiqAI compliant with banking regulations?",
-    answer: "Yes. We're SOC 2 Type II certified, FCRA-aligned, and built with GLBA compliance in mind. Our explainable AI provides full audit trails for every decision."
+    answer: "Yes. We're SOC 2 Type II ready (observation window active), FCRA-aligned, and built with GLBA compliance in mind. Our explainable AI provides full audit trails for every decision."
   },
   {
     question: "Can we customize the risk models?",
@@ -98,10 +99,45 @@ export default function RequestDemo() {
     jobTitle: '',
     phone: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Demo request submitted:', formData);
+    setIsSubmitting(true);
+    setError('');
+
+    const templateParams = {
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      business_email: formData.email,
+      business_name: formData.company,
+      message: `Demo Request\nJob Title: ${formData.jobTitle}\nPhone: ${formData.phone || 'Not provided'}`,
+      time: new Date().toLocaleString(),
+    };
+
+    try {
+      await emailjs.send(
+        'service_zo3597t',
+        'template_xmda9in',
+        templateParams,
+        'ROloA61OoR2iNley2'
+      );
+      setIsSubmitted(true);
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        jobTitle: '',
+        phone: '',
+      });
+    } catch (err) {
+      setError('Something went wrong. Please try again or email us directly at sales@futeurcredx.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -367,7 +403,7 @@ export default function RequestDemo() {
               <div className="space-y-6">
                 {[
                   { icon: Target, text: "Custom demo tailored to your use case" },
-                  { icon: Shield, text: "SOC 2 Type II & GLBA compliant" },
+                  { icon: Shield, text: "SOC 2 Type II ready & GLBA compliant" },
                   { icon: TrendingUp, text: "See projected ROI for your portfolio" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4">
@@ -456,13 +492,39 @@ export default function RequestDemo() {
                     />
                   </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-[#C9B896] text-[#2D2424] hover:bg-[#D4C5A9] py-6 rounded-xl font-semibold text-base"
-                  >
-                    Request Demo
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
+                  {error && (
+                    <div className="bg-red-500/10 border border-red-500/30 text-red-300 px-4 py-3 rounded-lg text-sm">
+                      {error}
+                    </div>
+                  )}
+
+                  {isSubmitted ? (
+                    <div className="bg-green-500/10 border border-green-500/30 text-green-300 px-4 py-4 rounded-xl flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium">Demo request received!</p>
+                        <p className="text-sm text-green-300/70">A solutions expert will be in touch within 1-2 business days.</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#C9B896] text-[#2D2424] hover:bg-[#D4C5A9] py-6 rounded-xl font-semibold text-base disabled:opacity-70"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Request Demo
+                          <ArrowRight className="w-5 h-5 ml-2" />
+                        </>
+                      )}
+                    </Button>
+                  )}
 
                   <p className="text-xs text-white/40 text-center pt-2">
                     Someone will be in touch within 1-2 business days.

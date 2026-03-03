@@ -678,7 +678,7 @@ const InstitutionSolution = () => {
                 <h3 className="text-xl font-bold mb-6">Built for enterprise security.</h3>
                 <div className="space-y-4">
                   {[
-                    { icon: Shield, title: "SOC 2 Type II", desc: "Enterprise-grade controls" },
+                    { icon: Shield, title: "SOC 2 Type II Ready", desc: "Enterprise-grade controls" },
                     { icon: Eye, title: "FCRA Aligned", desc: "Compliant practices" },
                     { icon: Lock, title: "Zero Trust", desc: "AES-256, TLS 1.2+" }
                   ].map((item, i) => (

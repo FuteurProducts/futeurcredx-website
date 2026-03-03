@@ -89,8 +89,8 @@ const faqCategories = [
     { question: "What's the rate limit?", answer: "Standard plans: 100 requests/minute. Business plans: 500 requests/minute. Enterprise: Custom limits. Rate limit headers are included in all responses." },
   ]},
   { name: "Security & Compliance", faqs: [
-    { question: "Is my data secure?", answer: "Absolutely. FuteurCredX uses AES-256 encryption at rest and in transit, zero-knowledge architecture for sensitive data, and SOC 2 Type II compliant infrastructure." },
-    { question: "Is FuteurCredX SOC 2 compliant?", answer: "Yes, we maintain SOC 2 Type II certification with annual third-party security assessments. Reports available for enterprise customers under NDA." },
+    { question: "Is my data secure?", answer: "Absolutely. FuteurCredX uses AES-256 encryption at rest and in transit, zero-knowledge architecture for sensitive data, and SOC 2 Type II ready infrastructure." },
+    { question: "Is FuteurCredX SOC 2 compliant?", answer: "Yes, we are SOC 2 Type II ready with our observation window active and annual third-party security assessments ongoing. Reports available for enterprise customers under NDA." },
     { question: "Are you GLBA compliant?", answer: "Yes, as a provider of financial data services, we fully comply with the Gramm-Leach-Bliley Act requirements for data protection and privacy." },
     { question: "How do you handle FCRA requirements?", answer: "We operate as a consumer reporting agency and comply with all FCRA requirements including permissible purpose verification, dispute handling, and adverse action notices." },
     { question: "Can I delete my data?", answer: "Yes, you can request complete data deletion from Settings > Privacy. We'll remove your data within 30 days per CCPA/GDPR requirements." },

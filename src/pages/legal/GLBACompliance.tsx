@@ -180,7 +180,7 @@ export default function GLBACompliance() {
         <h2 className="text-2xl font-bold mb-4">Physical Safeguards</h2>
         <p>We maintain the following physical safeguards:</p>
         <ul className="list-disc pl-6 space-y-2 mt-4">
-          <li><strong>Data Center Security:</strong> SOC 2 Type II certified cloud data centers 
+          <li><strong>Data Center Security:</strong> SOC 2 Type II ready cloud data centers
           with 24/7 physical security</li>
           <li><strong>Access Controls:</strong> Badge access, biometric authentication, and 
           visitor management</li>

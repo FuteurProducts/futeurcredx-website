@@ -35,28 +35,28 @@ const EnterpriseCarouselSection = () => {
   const carouselItems = [
     {
       id: 1,
-      title: "JPMorgan Chase",
-      subtitle: "Credit Journey® Success",
-      description: "Chase drives 25% increase in card applications with their Credit Journey tool, generating $340M in additional revenue within 18 months.",
-      features: ["+25% card applications", "$340M additional revenue", "Within 18 months"],
+      title: "Major Bank — Enterprise Pilot",
+      subtitle: "Credit Journey Results",
+      description: "A leading financial institution drives significant increase in card applications with their credit journey tool, yielding strong revenue growth within 18 months.",
+      features: ["+25% card applications", "Strong revenue growth", "Within 18 months"],
       logo: "/logos/banks/chase.png",
       screenImage: "/mobile/chase.png"
     },
     {
       id: 2,
-      title: "Dun & Bradstreet",
-      subtitle: "CreditSignal® Platform",
-      description: "Dun & Bradstreet's CreditSignal platform increased business client acquisition by 35% and improved retention rates through business credit monitoring.",
+      title: "Business Credit Bureau — Case Study",
+      subtitle: "Credit Monitoring Platform",
+      description: "A leading business credit bureau's monitoring platform increased client acquisition by 35% and improved retention rates through business credit visibility tools.",
       features: ["+35% client acquisition", "22% retention improvement", "15-month deployment"],
       logo: "/logos/banks/dnb.png",
       screenImage: "/mobile/dun.png"
     },
     {
       id: 3,
-      title: "Wells Fargo",
-      subtitle: "Credit Close-Up® Results",
-      description: "Wells Fargo increased loan origination by 30% with their Credit Close-Up tool, driving $220M in lending growth over a 24-month period.",
-      features: ["+30% loan origination", "$220M lending growth", "24-month period"],
+      title: "Major Lender — Enterprise Pilot",
+      subtitle: "Credit Visibility Results",
+      description: "Enterprise pilot results: a major lending institution increased loan origination by 30% with a credit visibility tool, driving substantial lending growth over a 24-month period.",
+      features: ["+30% loan origination", "Substantial lending growth", "24-month period"],
       logo: "/logos/banks/wellsfargo.png",
       screenImage: "/mobile/wells.png"
     }

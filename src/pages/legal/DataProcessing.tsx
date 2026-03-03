@@ -159,7 +159,7 @@ export default function DataProcessing() {
           <li><strong>Encryption:</strong> 256-bit AES encryption for data at rest and TLS 1.3 for data in transit</li>
           <li><strong>Access Controls:</strong> Role-based access with multi-factor authentication</li>
           <li><strong>Network Security:</strong> Firewalls, intrusion detection, and DDoS protection</li>
-          <li><strong>Physical Security:</strong> SOC 2 Type II certified data centers</li>
+          <li><strong>Physical Security:</strong> SOC 2 Type II ready data centers</li>
           <li><strong>Monitoring:</strong> 24/7 security monitoring and logging</li>
           <li><strong>Testing:</strong> Regular penetration testing and vulnerability assessments</li>
           <li><strong>Incident Response:</strong> Documented incident response procedures</li>

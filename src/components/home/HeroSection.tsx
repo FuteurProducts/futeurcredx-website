@@ -13,11 +13,11 @@ const floatingTiles = [
 ];
 
 const credibilityCards = [
-  { 
-    label: "Bank-grade governance", 
+  {
+    label: "Bank-grade governance",
     icon: Building,
     kpi: "SOC 2",
-    kpiLabel: "Certified"
+    kpiLabel: "Ready"
   },
   { 
     label: "API-first integration", 

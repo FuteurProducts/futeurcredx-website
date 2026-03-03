@@ -34,10 +34,10 @@ const trustFeatures = [
 ];
 
 const certifications = [
-  { label: "SOC 2 Type II", icon: ShieldCheck },
+  { label: "SOC 2 Type II Ready", icon: ShieldCheck },
   { label: "FCRA Compliant", icon: FileCheck },
   { label: "GDPR Ready", icon: Database },
-  { label: "ISO 27001", icon: Key },
+  { label: "ISO 27001 Roadmap", icon: Key },
 ];
 
 // Animated security visualization component

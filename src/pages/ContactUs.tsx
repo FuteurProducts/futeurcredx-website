@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ChevronDown, Mail, Phone, MapPin, Youtube, Linkedin, ArrowRight } from "lucide-react";
+import { ChevronDown, Mail, Phone, MapPin, Youtube, Linkedin, ArrowRight, Loader2, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 // FAQ data for Contact Us page
 const faqData = [
@@ -66,11 +67,46 @@ export default function ContactUs() {
     company: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setError('');
+
+    const templateParams = {
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      business_email: formData.email,
+      phone_number: formData.phone || 'Not provided',
+      business_name: formData.company,
+      message: formData.message || 'No message provided',
+      time: new Date().toLocaleString(),
+    };
+
+    try {
+      await emailjs.send(
+        'service_zo3597t',
+        'template_xmda9in',
+        templateParams,
+        'ROloA61OoR2iNley2'
+      );
+      setIsSubmitted(true);
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: ''
+      });
+    } catch (err) {
+      setError('Something went wrong. Please try again or email us directly at sales@futeurcredx.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -203,13 +239,39 @@ export default function ContactUs() {
                     />
                   </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2"
-                  >
-                    Submit
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
+                  {error && (
+                    <div className="bg-red-500/10 border border-red-500/30 text-red-300 px-4 py-3 rounded-lg text-sm">
+                      {error}
+                    </div>
+                  )}
+
+                  {isSubmitted ? (
+                    <div className="bg-green-500/10 border border-green-500/30 text-green-300 px-4 py-4 rounded-lg flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium">Thank you for reaching out!</p>
+                        <p className="text-sm text-green-300/70">Our team will get back to you within 24-48 business hours.</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 disabled:opacity-70"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Submit
+                          <ArrowRight className="w-4 h-4" />
+                        </>
+                      )}
+                    </Button>
+                  )}
                 </form>
               </div>
             </motion.div>

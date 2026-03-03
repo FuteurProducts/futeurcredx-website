@@ -58,28 +58,28 @@ const Enterprise = () => {
   }, []);
 
   const bankSuccess = [
-    { 
-      bank: "JPMorgan Chase", 
-      tool: "Credit Journey®", 
+    {
+      bank: "Major Bank — Enterprise Pilot",
+      tool: "Credit Journey Tool",
       logo: "/logos/banks/chase.png",
       result: "+25% card applications",
-      revenue: "$340M additional revenue",
+      revenue: "Strong revenue growth",
       timeframe: "Within 18 months"
     },
-    { 
-      bank: "Capital One", 
-      tool: "CreditWise®", 
+    {
+      bank: "Leading Card Issuer — Enterprise Pilot",
+      tool: "Credit Monitoring Platform",
       logo: "/logos/banks/capitalone.png",
       result: "2x digital engagement",
-      revenue: "$180M cost savings",
+      revenue: "Significant cost savings",
       timeframe: "First year alone"
     },
-    { 
-      bank: "Wells Fargo", 
-      tool: "Credit Close-Up®", 
+    {
+      bank: "Major Lender — Enterprise Pilot",
+      tool: "Credit Visibility Tool",
       logo: "/logos/banks/wellsfargo.png",
       result: "+30% loan origination",
-      revenue: "$220M lending growth",
+      revenue: "Substantial lending growth",
       timeframe: "24-month period"
     }
   ];
@@ -106,7 +106,7 @@ const Enterprise = () => {
       icon: Users,
       bankBenefit: "3.2x increase in digital banking usage",
       implementation: "White-label ready",
-      compliance: "SOC 2 Type II certified"
+      compliance: "SOC 2 Type II ready"
     },
     {
       name: "LUMIQ Convert™",
@@ -131,7 +131,7 @@ const Enterprise = () => {
       metric: "Additional SMB Lending Volume",
       year1: "$50M",
       year3: "$180M",
-      basis: "Based on Wells Fargo 30% increase"
+      basis: "Based on enterprise pilot 30% increase"
     },
     {
       metric: "Digital Engagement Revenue",
@@ -161,7 +161,7 @@ const Enterprise = () => {
   ];
 
   const trustCredentials = [
-    { icon: Shield, text: "SOC 2 Type II Certified", detail: "Annual audits by Big 4" },
+    { icon: Shield, text: "SOC 2 Type II Ready", detail: "Observation window active" },
     { icon: Lock, text: "Bank-Grade Encryption", detail: "AES-256, zero-trust architecture" },
     { icon: Award, text: "FCRA Compliant", detail: "Transparent, auditable methodology" },
     { icon: Globe, text: "Multi-Bureau Coverage", detail: "Experian, Equifax, D&B integrated" },
@@ -191,7 +191,7 @@ const Enterprise = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            You mastered consumer credit engagement with <strong className="text-white font-semibold">CreditWise® and Credit Journey®</strong>.<br/>
+            You mastered consumer credit engagement with <strong className="text-white font-semibold">CreditWise and Credit Journey</strong>.<br/>
             <strong className="text-white font-semibold">Now fintechs are eating your SMB market with the same playbook.</strong>
           </p>
 

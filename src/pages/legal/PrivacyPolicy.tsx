@@ -142,7 +142,7 @@ export default function PrivacyPolicy() {
         </p>
         <ul className="list-disc pl-6 space-y-2 mt-4">
           <li>256-bit AES encryption for data at rest and in transit</li>
-          <li>SOC 2 Type II certified infrastructure</li>
+          <li>SOC 2 Type II ready infrastructure (observation window active)</li>
           <li>Multi-factor authentication for account access</li>
           <li>Regular security audits and penetration testing</li>
           <li>Employee training on data protection practices</li>
