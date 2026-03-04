@@ -27,39 +27,41 @@ export default function ContactSales() {
     setIsSubmitting(true);
     setError('');
 
-    const templateParams = {
-      first_name: formData.firstName,
-      last_name: formData.lastName,
-      phone_number: formData.phone,
-      business_email: formData.email,
-      business_name: formData.company,
-      business_website: formData.website || 'Not provided',
-      annual_revenue: formData.annualRevenue,
-      message: formData.message || 'No message provided',
-      time: new Date().toLocaleString(),
-    };
-
     try {
-      await emailjs.send(
-        'service_zo3597t',
-        'template_xmda9in',
-        templateParams,
-        'ROloA61OoR2iNley2'
-      );
-      setIsSubmitted(true);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        company: '',
-        website: '',
-        annualRevenue: '',
-        message: ''
+      const response = await fetch('https://api.sandbox.futeurcredx.com/api/v1/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: `${formData.message || 'No message provided'}\n\nWebsite: ${formData.website || 'Not provided'}\nAnnual Revenue: ${formData.annualRevenue}`,
+          source_site: 'www.futeurcredx.com',
+          source_form: 'contact_sales',
+        }),
       });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          company: '',
+          website: '',
+          annualRevenue: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.message);
+      }
     } catch (err) {
       setError('Something went wrong. Please try again or email us directly.');
-      console.error('EmailJS error:', err);
+      console.error('Form submission error:', err);
     } finally {
       setIsSubmitting(false);
     }

@@ -108,31 +108,36 @@ export default function RequestDemo() {
     setIsSubmitting(true);
     setError('');
 
-    const templateParams = {
-      first_name: formData.firstName,
-      last_name: formData.lastName,
-      business_email: formData.email,
-      business_name: formData.company,
-      message: `Demo Request\nJob Title: ${formData.jobTitle}\nPhone: ${formData.phone || 'Not provided'}`,
-      time: new Date().toLocaleString(),
-    };
-
     try {
-      await emailjs.send(
-        'service_zo3597t',
-        'template_xmda9in',
-        templateParams,
-        'ROloA61OoR2iNley2'
-      );
-      setIsSubmitted(true);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        company: '',
-        jobTitle: '',
-        phone: '',
+      const response = await fetch('https://api.sandbox.futeurcredx.com/api/v1/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
+          email: formData.email,
+          phone: formData.phone || '',
+          company: formData.company,
+          message: `Demo Request\nJob Title: ${formData.jobTitle || 'Not provided'}`,
+          source_site: 'www.futeurcredx.com',
+          source_form: 'request_demo',
+        }),
       });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          company: '',
+          jobTitle: '',
+          phone: '',
+        });
+      } else {
+        throw new Error(result.message);
+      }
     } catch (err) {
       setError('Something went wrong. Please try again or email us directly at sales@futeurcredx.com');
     } finally {
